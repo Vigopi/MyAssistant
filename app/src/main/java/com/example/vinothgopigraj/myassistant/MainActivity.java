@@ -96,6 +96,8 @@ public class MainActivity extends AppCompatActivity {
                     if (result.get(0).contains("send")) {
 
                         textToSpeech.speak("To whom you want to send the message?", TextToSpeech.QUEUE_FLUSH, null);
+                        Intent launchIntent = getPackageManager().getLaunchIntentForPackage("com.whatsapp");
+                        startActivity(launchIntent);
                     }
                     if (result.get(0).contains("call")) {
 
